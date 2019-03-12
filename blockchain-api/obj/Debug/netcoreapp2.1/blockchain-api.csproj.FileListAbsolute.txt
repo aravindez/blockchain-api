@@ -1,0 +1,13 @@
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/bin/Debug/netcoreapp2.1/blockchain-api.deps.json
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/bin/Debug/netcoreapp2.1/blockchain-api.runtimeconfig.json
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/bin/Debug/netcoreapp2.1/blockchain-api.runtimeconfig.dev.json
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/bin/Debug/netcoreapp2.1/blockchain-api.dll
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/bin/Debug/netcoreapp2.1/blockchain-api.pdb
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/obj/Debug/netcoreapp2.1/blockchain-api.csproj.CoreCompileInputs.cache
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/obj/Debug/netcoreapp2.1/blockchain-api.RazorAssemblyInfo.cache
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/obj/Debug/netcoreapp2.1/blockchain-api.RazorAssemblyInfo.cs
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/obj/Debug/netcoreapp2.1/blockchain-api.AssemblyInfoInputs.cache
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/obj/Debug/netcoreapp2.1/blockchain-api.AssemblyInfo.cs
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/obj/Debug/netcoreapp2.1/blockchain-api.RazorTargetAssemblyInfo.cache
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/obj/Debug/netcoreapp2.1/blockchain-api.dll
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/obj/Debug/netcoreapp2.1/blockchain-api.pdb
