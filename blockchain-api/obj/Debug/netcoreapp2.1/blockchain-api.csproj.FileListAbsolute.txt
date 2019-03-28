@@ -11,3 +11,4 @@
 /Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/obj/Debug/netcoreapp2.1/blockchain-api.RazorTargetAssemblyInfo.cache
 /Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/obj/Debug/netcoreapp2.1/blockchain-api.dll
 /Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/obj/Debug/netcoreapp2.1/blockchain-api.pdb
+/Users/aravindez/Documents/alphind/blockchain/blockchain-api/blockchain-api/obj/Debug/netcoreapp2.1/blockchain-api.csprojAssemblyReference.cache

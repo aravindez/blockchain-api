@@ -1,9 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using blockchainapi.Models;
 using blockchainapi.Services;
 
@@ -19,17 +16,9 @@ namespace blockchainapi.Controllers
         //public BlockController(BlockContext context)
         public BlockController(BlockService service)
         {
-            //_context = context;
+
             _service = service;
-            /*
-            if (_context.BlockItems.Count() == 0)
-            {
-                // Create a new BlockItem if collection is empty,
-                // which means you can't delete all BlockItems.
-                _context.BlockItems.Add(new BlockItem { });
-                _context.SaveChanges();
-            }
-            //*/
+
         }
 
         // GET: api/block
@@ -55,22 +44,44 @@ namespace blockchainapi.Controllers
             return _service.GetBlock(id);
         }
 
+        // GET pending_blocks
+        [Route("GetPendingBlocks")]
+        [HttpGet]
+        public List<BlockItem> GetPendingBlocks(int user_id)
+        {
+            return _service.GetPendingBlocks(user_id);
+        }
+
+        // POST init block
+        [Route("PostInitBlock")]
+        [HttpPost]
+        public bool PostInitBlock(BlockItem item)
+        {
+            return _service.PostInitBlock(item);
+        }
 
         // POST new block
-        [Route("PostBlockItem")]
+        [Route("PostNewBlock")]
         [HttpPost]
-        public bool PostBlockItem(BlockItem item, int chain_id)
+        public bool PostNewBlock(BlockItem item)
         {
-            return _service.PostNewBlock(item, chain_id);
+            return _service.PostNewBlock(item);
         }
 
         // POST validation
         [Route("PostValidation")]
         [HttpPost]
-        public bool PostValidation(int user_id, int block_id, int chain_id, Boolean valid)
+        public bool PostValidation(ValidationItem validation)
         {
-            return _service.PostValidation(user_id, block_id, chain_id, valid);
+            return _service.PostValidation(validation);
         }
 
+        // GET validation
+        [Route("GetValidation")]
+        [HttpGet]
+        public String GetValidation(int block_id)
+        {
+            return _service.GetValidation(block_id);
+        }
     }
 }

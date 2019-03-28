@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{F8837E1F-C1C2-4293-A428-70A9904CEE33}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="blockchain-api/Services/UserService.cs">
+    <Files>
+      <File FileName="blockchain-api/Services/ChainService.cs" Line="211" Column="22" />
+      <File FileName="blockchain-api/Services/BlockService.cs" Line="117" Column="17" />
+      <File FileName="blockchain-api/Services/UserService.cs" Line="316" Column="29" />
+      <File FileName="blockchain-api/Controllers/UserController.cs" Line="82" Column="33" />
+      <File FileName="blockchain-api/Models/UserItem.cs" Line="8" Column="44" />
+      <File FileName="blockchain-api/Models/GroupItem.cs" Line="10" Column="24" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="blockchain-api" expanded="True">
+            <Node name="blockchain-api" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="UserService.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.blockchain-api PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
