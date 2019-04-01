@@ -36,10 +36,10 @@ namespace blockchainapi.Services
                     user.fname = (String)reader[1];
                     user.lname = (String)reader[2];
                     user.name = user.fname + " " + user.lname;
-                    ulong temp = (ulong)reader[3];
-                    user.admin = Convert.ToInt32(temp);
+                    user.admin = (int)reader[3];
                 }
 
+                reader.Close();
                 conn.Close();
             }
             catch (Exception ex)
@@ -76,6 +76,7 @@ namespace blockchainapi.Services
                     users.Add(user);
                 }
 
+                reader.Close();
                 conn.Close();
             }
             catch (Exception ex)
@@ -112,6 +113,7 @@ namespace blockchainapi.Services
                     groups.Add(group);
                 }
 
+                reader.Close();
                 conn.Close();
             }
             catch (Exception ex)
@@ -145,6 +147,7 @@ namespace blockchainapi.Services
                     groups.Add(group);
                 }
 
+                reader.Close();
                 conn.Close();
             }
             catch (Exception ex)
@@ -213,6 +216,7 @@ namespace blockchainapi.Services
                     }
                 }
 
+                reader.Close();
                 conn.Close();
             }
             catch (Exception ex)
@@ -265,10 +269,34 @@ namespace blockchainapi.Services
                 conn.Open();
 
                 // Perform database operations
-                String query = "INSERT INTO `users_groups` (user_id, group_id) " +
-                	            "VALUES ("+ug.user_id.ToString()+", "+ug.group_id.ToString()+");";
+                String query = "SELECT chain_id FROM groups_chains WHERE group_id=" + ug.group_id.ToString() + ";";
                 MySqlCommand command = new MySqlCommand(query, conn);
-                int rowsAffected = command.ExecuteNonQuery();
+                MySqlDataReader reader = command.ExecuteReader();
+                List<int> chains = new List<int>();
+                while(reader.Read())
+                {
+                    chains.Add((int)reader[0]);
+                }
+                reader.Close();
+
+                int rowsAffected;
+                query = "INSERT INTO `block_chain_user` (chain_id, user_id, block) VALUES ";
+                for (int i=0; i<chains.Count; i++)
+                {
+                    command = new MySqlCommand(query + "(" + chains[i].ToString() + ", " + ug.user_id.ToString() + ", 0);", conn);
+                    rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected != 1)
+                    {
+                        Console.WriteLine("UserGroup wasn't properly inserted.");
+                        return false;
+                    }
+
+                }
+
+                query = "INSERT INTO `users_groups` (user_id, group_id) " +
+                	            "VALUES ("+ug.user_id.ToString()+", "+ug.group_id.ToString()+");";
+                command = new MySqlCommand(query, conn);
+                rowsAffected = command.ExecuteNonQuery();
                 if (rowsAffected != 1)
                 {
                     Console.WriteLine("UserGroup wasn't properly inserted.");
@@ -313,9 +341,9 @@ namespace blockchainapi.Services
 
                 UserGroup ug = new UserGroup();
                 ug.group_id = group_id;
-                foreach (int user in group.users)
+                foreach (string user in group.users)
                 {
-                    ug.user_id = user;
+                    ug.user_id = Convert.ToInt32(user);
                     bool error = PostUserGroup(ug);
                     if (!error) { return error; }
                 }

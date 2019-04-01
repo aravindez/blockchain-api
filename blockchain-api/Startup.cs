@@ -50,6 +50,7 @@ namespace blockchain_api
                                         .AllowAnyMethod();
                 });
             });
+            services.AddSignalR();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -71,7 +72,12 @@ namespace blockchain_api
             }
 
             app.UseCors(MyAllowSpecificOrigins);
-
+            /*
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<BlockHub>("/block");
+            });
+            */
             app.UseHttpsRedirection();
             app.UseMvc();
         }

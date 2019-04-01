@@ -181,6 +181,7 @@ namespace blockchainapi.Services
 
         public int PostChain(ChainItem chain)
         {
+            Console.WriteLine(chain.groups);
             try
             {
                 MySqlConnection conn = new MySqlConnection(connString);
@@ -208,6 +209,18 @@ namespace blockchainapi.Services
                 }
 
                 int rowsAffected;
+                query = "INSERT INTO `groups_chains` (group_id, chain_id) VALUES ";
+                for (int i=0; i<chain.groups.Count; i++)
+                {
+                    command = new MySqlCommand(query+"("+chain.groups[i]+", "+chain_id.ToString()+");", conn);
+                    rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected != 1)
+                    {
+                        Console.WriteLine("failed to properly insert chain into db.");
+                        return 0;
+                    }
+                }
+
                 if (!chain.users.Contains(chain.created_by))
                 {
                     query = "INSERT INTO `block_chain_user` (chain_id, user_id, block)" +

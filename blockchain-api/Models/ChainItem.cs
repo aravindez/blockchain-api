@@ -10,5 +10,6 @@ namespace blockchainapi.Models
         public int created_by { get; set; }
         public int initData { get; set; }
         public List<int> users { get; set; }
+        public List<string> groups { get; set; }
     }
 }
