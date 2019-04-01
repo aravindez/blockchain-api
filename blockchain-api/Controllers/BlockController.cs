@@ -63,7 +63,7 @@ namespace blockchainapi.Controllers
         // POST new block
         [Route("PostNewBlock")]
         [HttpPost]
-        public bool PostNewBlock(BlockItem item)
+        public int PostNewBlock(BlockItem item)
         {
             return _service.PostNewBlock(item);
         }

@@ -45,9 +45,6 @@ namespace blockchain_api
                     builder.WithOrigins("http://localhost:4200")
                                         .AllowAnyHeader()
                                         .AllowAnyMethod();
-                    builder.WithOrigins("http://localhost:4201")
-                                        .AllowAnyHeader()
-                                        .AllowAnyMethod();
                 });
             });
             services.AddSignalR();

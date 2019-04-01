@@ -145,7 +145,7 @@ namespace blockchainapi.Services
             }
         }
 
-        public bool PostNewBlock(BlockItem block)
+        public int PostNewBlock(BlockItem block)
         {
             try
             {
@@ -206,23 +206,23 @@ namespace blockchainapi.Services
                     }
                     command = new MySqlCommand(query, conn);
                     int insertPendingBlocks = command.ExecuteNonQuery();
-                    if (insertPendingBlocks != notifyUsers.Count) { Console.WriteLine("failed to insert into pending_blocks."); return false; }
+                    if (insertPendingBlocks != notifyUsers.Count) { Console.WriteLine("failed to insert into pending_blocks."); return 0; }
                 }
 
                 // Insert block into block_chain_user
                 query = "INSERT INTO `block_chain_user` (block_id, chain_id, block) VALUES (" + block_id.ToString() + ", " + block.chain_id.ToString() + ", 1);";
                 command = new MySqlCommand(query, conn);
                 int insertBlockChainUser = command.ExecuteNonQuery();
-                if (insertBlockChainUser != 1) { Console.WriteLine("failed to properly insert into block_chain_user."); return false; }
+                if (insertBlockChainUser != 1) { Console.WriteLine("failed to properly insert into block_chain_user."); return 0; }
 
                 reader.Close();
                 conn.Close();
-                return true;
+                return block_id;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return false;
+                return 0;
             }
         }
 

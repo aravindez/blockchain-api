@@ -36,9 +36,17 @@ namespace blockchainapi.Controllers
         //GET: api/chain
         [Route("GetChain")]
         [HttpGet]
-        public List<BlockItem> GetChain(int chain_id)
+        public List<BlockItem> GetChain(int chain_id, bool store = false)
         {
-            return _service.GetChain(chain_id);
+            return _service.GetChain(chain_id, store);
+        }
+
+        //GET: api/chain
+        [Route("GetValidChain")]
+        [HttpGet]
+        public List<BlockItem> GetValidChain(int chain_id, bool store = false)
+        {
+            return _service.GetChain(chain_id, store);
         }
 
         //POST: api/chain

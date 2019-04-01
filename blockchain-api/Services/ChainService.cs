@@ -80,7 +80,7 @@ namespace blockchainapi.Services
             return chain;
         }
 
-        public List<BlockItem> GetChain(int chain_id)
+        public List<BlockItem> GetChain(int chain_id, bool store)
         {
             List<BlockItem> blocks = new List<BlockItem>();
 
@@ -126,7 +126,11 @@ namespace blockchainapi.Services
                 Console.WriteLine(ex.ToString());
             }
 
-            return blocks;
+            List<BlockItem> trim = new List<BlockItem>();
+            if (blocks.Count < 5) { trim = blocks; }
+            else { trim = blocks.GetRange(blocks.Count-5, 5); }
+
+            return store ? trim : blocks;
         }
 
         public List<BlockItem> GetValidChain(int chain_id)
