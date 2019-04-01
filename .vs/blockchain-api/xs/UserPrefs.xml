@@ -1,17 +1,9 @@
 ﻿<Properties StartupConfiguration="{F8837E1F-C1C2-4293-A428-70A9904CEE33}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="blockchain-api/Controllers/BlockController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="blockchain-api/Services/BlockService.cs">
     <Files>
-      <File FileName="blockchain-api/Services/ChainService.cs" Line="83" Column="65" />
-      <File FileName="blockchain-api/Controllers/ChainController.cs" Line="46" Column="15" />
-      <File FileName="blockchain-api/Services/BlockService.cs" Line="225" Column="25" />
-      <File FileName="blockchain-api/Services/UserService.cs" Line="285" Column="18" />
-      <File FileName="blockchain-api/Controllers/UserController.cs" Line="82" Column="33" />
-      <File FileName="blockchain-api/Models/UserItem.cs" Line="8" Column="44" />
-      <File FileName="blockchain-api/Models/GroupItem.cs" Line="10" Column="27" />
-      <File FileName="blockchain-api/Startup.cs" Line="47" Column="59" />
-      <File FileName="blockchain-api/Models/ChainItem.cs" Line="13" Column="49" />
-      <File FileName="blockchain-api/Models/UserGroup.cs" Line="7" Column="41" />
-      <File FileName="blockchain-api/Controllers/BlockController.cs" Line="66" Column="19" />
+      <File FileName="blockchain-api/Startup.cs" Line="49" Column="60" />
+      <File FileName="blockchain-api/Hubs/BlockHub.cs" Line="10" Column="10" />
+      <File FileName="blockchain-api/Services/BlockService.cs" Line="134" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,14 +12,16 @@
             <Node name="blockchain-api" expanded="True">
               <Node name="Dependencies" expanded="True">
                 <Node name="PackageDependencies" expanded="True" />
-                <Node name="SdkDependencies" expanded="True" />
+                <Node name="SdkDependencies" expanded="True">
+                  <Node name="Microsoft.NETCore.App" expanded="True" />
+                </Node>
               </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="BlockController.cs" selected="True" />
-              </Node>
-              <Node name="HubConfig" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Hubs" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="BlockService.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

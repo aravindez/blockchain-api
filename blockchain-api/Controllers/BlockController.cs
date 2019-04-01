@@ -55,7 +55,7 @@ namespace blockchainapi.Controllers
         // POST init block
         [Route("PostInitBlock")]
         [HttpPost]
-        public bool PostInitBlock(BlockItem item)
+        public int PostInitBlock(BlockItem item)
         {
             return _service.PostInitBlock(item);
         }

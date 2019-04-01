@@ -9,7 +9,7 @@
     <Folder Include="Models\" />
     <Folder Include="Services\" />
     <Folder Include="Database\" />
-    <Folder Include="HubConfig\" />
+    <Folder Include="Hubs\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -93,7 +93,7 @@ namespace blockchainapi.Services
             return block;
         }
 
-        public bool PostInitBlock(BlockItem block)
+        public int PostInitBlock(BlockItem block)
         {
             try
             {
@@ -132,16 +132,16 @@ namespace blockchainapi.Services
                 if (rowsAffected != 1)
                 {
                     Console.WriteLine("failed to properly insert block into db.");
-                    return false;
+                    return 0;
                 }
                 Console.WriteLine("init block success.");
-                return true;
+                return block_id;
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return false;
+                return 0;
             }
         }
 

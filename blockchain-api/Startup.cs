@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using blockchainapi.Services;
+using blockchainapi.Hubs;
 
 namespace blockchain_api
 {
@@ -44,7 +45,8 @@ namespace blockchain_api
                 {
                     builder.WithOrigins("http://localhost:4200")
                                         .AllowAnyHeader()
-                                        .AllowAnyMethod();
+                                        .AllowAnyMethod()
+                                        .AllowCredentials();
                 });
             });
             services.AddSignalR();
@@ -69,12 +71,12 @@ namespace blockchain_api
             }
 
             app.UseCors(MyAllowSpecificOrigins);
-            /*
+
             app.UseSignalR(routes =>
             {
-                routes.MapHub<BlockHub>("/block");
+                routes.MapHub<BlockHub>("/BlockHub");
             });
-            */
+
             app.UseHttpsRedirection();
             app.UseMvc();
         }
